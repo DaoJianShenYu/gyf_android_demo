@@ -1,0 +1,57 @@
+package com.gyf.dialog;
+
+import android.app.Activity;
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+
+    private Dialog dialog;
+
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    
+	
+    /**
+     * 自定义弹窗
+     * @param view
+     */
+    public void UserDefinedDialogClick (View view) {
+    	//输入骚扰拦截密码的对话框
+    		//设置对话框主题
+    		dialog = new Dialog(this,R.style.MyDialogTheme);
+    		//设置对话框内容
+    		View v = View.inflate(this, R.layout.dialog_enter_pwd, null);
+    		dialog.setContentView(v);
+    		//找到对话框中的控件
+    		final EditText et_pwd = (EditText) v.findViewById(R.id.et_enterdialog_pwd);
+    		Button bt_dialog_ok = (Button) v.findViewById(R.id.bt_enterdialog_ok);
+    		Button bt_dialog_cancle = (Button) v.findViewById(R.id.bt_enterdialog_cancle);
+    		
+    		//设置确认按钮的点击事件
+    		bt_dialog_ok.setOnClickListener(new OnClickListener() {
+    			@Override
+    			public void onClick(View v) {
+    				
+    			}
+    		});
+    		
+    		//设置取消按钮的点击事件
+    		bt_dialog_cancle.setOnClickListener(new OnClickListener() {
+    			@Override
+    			public void onClick(View v) {
+    				//对话框消失
+    				dialog.dismiss();
+    			}
+    		});
+    		//显示对话框
+    		dialog.show();
+    	}
+    }

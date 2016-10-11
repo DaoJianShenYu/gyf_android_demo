@@ -1,0 +1,10 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_txt"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:updatePeriodMillis="86400000">
+    <!-- 
+    	initialLayout:初始布局
+    	minWidth:宽度格子数,dp = 70*n格 - 30(低版本的计算公式不同)
+     -->
+</appwidget-provider>
